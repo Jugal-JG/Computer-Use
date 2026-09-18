@@ -31,6 +31,53 @@ def normalize(s):
     return re.sub(r"[^a-z0-9*]+", " ", s.lower()).strip()
 
 
+def _normalize_masked_ocr(value):
+    compact = re.sub(r"\s+", "", value)
+    if not compact:
+        return None
+    translated = compact.translate(str.maketrans({"x": "*", "X": "*", "#": "*", "•": "*", "●": "*"}))
+    direct = re.fullmatch(r"\*{2,8}\d{4}", translated)
+    if direct:
+        return direct.group(0)
+    suffix = re.search(r"(\d{4})$", translated)
+    if not suffix:
+        return None
+    stars = translated[: suffix.start()].count("*")
+    if stars < 2:
+        return None
+    return "*" * min(8, stars) + suffix.group(1)
+
+
+def _masked_candidates_from_words(words):
+    candidates = []
+    seen = set()
+    for text in [w.text for w in words]:
+        parsed = _normalize_masked_ocr(text)
+        if parsed and parsed not in seen:
+            seen.add(parsed)
+            candidates.append(parsed)
+    rows = []
+    for word in sorted(words, key=lambda w: (w.center[1], w.x)):
+        row = next((r for r in rows if abs(r[0].center[1] - word.center[1]) < 10), None)
+        if row is None:
+            rows.append([word])
+        else:
+            row.append(word)
+    for row in rows:
+        groups = []
+        for word in sorted(row, key=lambda w: w.x):
+            if groups and word.x - (groups[-1][-1].x + groups[-1][-1].w) < 36:
+                groups[-1].append(word)
+            else:
+                groups.append([word])
+        for group in groups:
+            parsed = _normalize_masked_ocr("".join(w.text for w in group))
+            if parsed and parsed not in seen:
+                seen.add(parsed)
+                candidates.append(parsed)
+    return candidates
+
+
 @dataclass
 class Box:
     text: str
@@ -493,21 +540,38 @@ class View:
         if right <= left or bottom <= top:
             raise Unresolved("VALUE_REGION_INVALID")
         crop = self.image.crop((left, top, right, bottom))
-        config = "--psm 7" + (" -c tessedit_char_whitelist=*0123456789" if masked else "")
+        configs = (
+            ("--psm 7 -c tessedit_char_whitelist=*0123456789", "--psm 7")
+            if masked
+            else ("--psm 7",)
+        )
         for scale in (1, 2, 3) if masked else (2,):
             image = crop.resize((crop.width * scale, crop.height * scale))
-            value = pytesseract.image_to_string(image, config=config).strip()
+            for config in configs:
+                    value = pytesseract.image_to_string(image, config=config).strip()
+                    if masked:
+                        value = _normalize_masked_ocr(value)
+                        if value is None:
+                            continue
+                    self.read_values[key] = value
+                    return value
             if masked:
-                value = value.replace(" ", "")
-                if not re.fullmatch(r"\*{2,6}\d{4}", value):
                     continue
-            self.read_values[key] = value
-            return value
+            if not value:
+                    continue
         raise Unresolved("OUTPUT_UNREADABLE")
 
     def read_value(self, target, *, masked=False):
-        box = self.resolve(target)
-        return self.read_box(box, inset=5 if target.kind == "field" else -4, masked=masked)
+        try:
+            box = self.resolve(target)
+            return self.read_box(box, inset=5 if target.kind == "field" else -4, masked=masked)
+        except Unresolved as exc:
+            if not masked or exc.code != "TARGET_NOT_FOUND":
+                raise
+            candidates = _masked_candidates_from_words(self.words)
+            if len(candidates) == 1:
+                return candidates[0]
+            raise
 
     def read_field(self, target):
         # Re-resolve on this screenshot: scrolling and responsive layout changes

@@ -7,7 +7,13 @@ from visual_agent.capability import discovery_draft
 from visual_agent.contracts import Artifact, Inputs, Target
 from visual_agent.discovery import ground_target
 from visual_agent.policy import Policy, PolicyDenied
-from visual_agent.vision import Box, Unresolved, View
+from visual_agent.vision import (
+    Box,
+    Unresolved,
+    View,
+    _masked_candidates_from_words,
+    _normalize_masked_ocr,
+)
 
 
 def test_empty_discovery_and_non_replayable_draft():
@@ -86,6 +92,33 @@ def test_read_box_invalid_bounds_and_ambiguity_are_not_guessed():
         view.resolve(
             Target(text="Reference", kind="value", relationships=("below",), min_confidence=0.5)
         )
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [("****0001", "****0001"), ("xx 0001", "**0001"), ("***-0001", "***0001")],
+)
+def test_masked_ocr_normalization_accepts_common_variants(raw, expected):
+    assert _normalize_masked_ocr(raw) == expected
+
+
+def test_masked_ocr_normalization_rejects_unmasked_text():
+    assert _normalize_masked_ocr("2026-08") is None
+
+
+def test_masked_candidates_join_split_tokens():
+    words = [Box("**", 100, 120, 18, 14), Box("0001", 124, 120, 36, 14)]
+    assert _masked_candidates_from_words(words) == ["**0001"]
+
+
+def test_read_value_masked_falls_back_when_label_anchor_is_missing(monkeypatch):
+    view = object.__new__(View)
+    view.words = [Box("**", 100, 120, 18, 14), Box("0001", 124, 120, 36, 14)]
+    monkeypatch.setattr(
+        view, "resolve", lambda target: (_ for _ in ()).throw(Unresolved("TARGET_NOT_FOUND"))
+    )
+    target = Target(text="Masked account", kind="value", relationships=("right_of",))
+    assert view.read_value(target, masked=True) == "**0001"
 
 
 def test_read_field_uses_newly_resolved_box(monkeypatch):
