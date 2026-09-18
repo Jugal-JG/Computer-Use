@@ -1,0 +1,18 @@
+{
+  "run_id": "4b56ccd5c12a43cb8a6c9d15777c47dc",
+  "session_id": "9df29b08e7b84fc2b3718f374e8e700f",
+  "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3",
+  "status": "success",
+  "code": "REVIEW_READY",
+  "step": "step_7",
+  "expected": "Statement Review",
+  "observed": "{\"screens\": [\"Statement Review\"], \"modal\": false, \"condition\": \"REVIEW_READY\"}",
+  "outputs": {
+    "masked_account": "****0002",
+    "statement_month": "2026-07",
+    "delivery_method": "electronic",
+    "review_ready": true
+  },
+  "llm_calls": 0,
+  "evidence_dir": "evidence/replay/slow"
+}

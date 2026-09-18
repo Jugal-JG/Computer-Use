@@ -1,0 +1,6 @@
+{"time": 1789247785.8386176, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "run_started", "session_id": "7b7a3900b8f442399e8ade468acb5fd3", "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3"}
+{"time": 1789247786.4657264, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "action", "step": "step_1", "kind": "type_text", "target": "member_id", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "member_id"}
+{"time": 1789247786.9390914, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "checkpoint_passed", "step": "step_1", "condition": "Member Search"}
+{"time": 1789247787.2400177, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "action", "step": "step_2", "kind": "click", "target": "search", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "input_ref": null}
+{"time": 1789247787.9128673, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "condition_detected", "code": "APP_UNAVAILABLE"}
+{"time": 1789247787.9228747, "run_id": "ed5ddbf3833743a4afbb88924ed5c48a", "event": "run_finished", "status": "failure", "code": "APP_UNAVAILABLE", "llm_calls": 0}

@@ -1,0 +1,485 @@
+{
+  "schema_version": "3.0",
+  "capability_id": "prepare_statement_request",
+  "capability_version": "3.0.0",
+  "description": "Prepare a statement request and verify its review without submitting.",
+  "input_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "member_id": {
+        "pattern": "^\\d{5}$",
+        "title": "Member Id",
+        "type": "string"
+      },
+      "statement_month": {
+        "pattern": "^2026-(0[1-9]|1[0-2])$",
+        "title": "Statement Month",
+        "type": "string"
+      },
+      "delivery_method": {
+        "enum": [
+          "postal",
+          "electronic"
+        ],
+        "title": "Delivery Method",
+        "type": "string"
+      }
+    },
+    "required": [
+      "member_id",
+      "statement_month",
+      "delivery_method"
+    ],
+    "title": "Inputs",
+    "type": "object"
+  },
+  "output_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "masked_account": {
+        "pattern": "^\\*{4}\\d{4}$",
+        "title": "Masked Account",
+        "type": "string"
+      },
+      "statement_month": {
+        "title": "Statement Month",
+        "type": "string"
+      },
+      "delivery_method": {
+        "enum": [
+          "postal",
+          "electronic"
+        ],
+        "title": "Delivery Method",
+        "type": "string"
+      },
+      "review_ready": {
+        "const": true,
+        "default": true,
+        "title": "Review Ready",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "masked_account",
+      "statement_month",
+      "delivery_method"
+    ],
+    "title": "Outputs",
+    "type": "object"
+  },
+  "extractions": {
+    "masked_account": {
+      "label": "Masked account",
+      "parser": "masked_account",
+      "target": {
+        "text": "Masked account",
+        "kind": "value",
+        "region": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "relationships": [
+          "right_of"
+        ],
+        "anchor_text": null,
+        "geometry_hint": [
+          0.6171875,
+          0.285,
+          0.05,
+          0.01625
+        ],
+        "min_confidence": 0.55,
+        "winner_margin": 0.12
+      }
+    },
+    "statement_month": {
+      "label": "Statement month",
+      "parser": "month",
+      "target": {
+        "text": "Statement month",
+        "kind": "value",
+        "region": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "relationships": [
+          "right_of"
+        ],
+        "anchor_text": null,
+        "geometry_hint": [
+          0.6171875,
+          0.3475,
+          0.05078125,
+          0.01625
+        ],
+        "min_confidence": 0.55,
+        "winner_margin": 0.12
+      }
+    },
+    "delivery_method": {
+      "label": "Delivery method",
+      "parser": "delivery",
+      "target": {
+        "text": "Delivery method",
+        "kind": "value",
+        "region": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "relationships": [
+          "right_of"
+        ],
+        "anchor_text": null,
+        "geometry_hint": [
+          0.6171875,
+          0.41,
+          0.0359375,
+          0.02125
+        ],
+        "min_confidence": 0.55,
+        "winner_margin": 0.12
+      }
+    }
+  },
+  "profile": "member-services-v1",
+  "discovery_viewport": [
+    1280,
+    800
+  ],
+  "entry_condition": "Member Search",
+  "targets": {
+    "target_1": {
+      "text": "Member ID",
+      "kind": "field",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [
+        "right_of"
+      ],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.3859375,
+        0.28875,
+        0.2390625,
+        0.0475
+      ],
+      "min_confidence": 0.5,
+      "winner_margin": 0.1
+    },
+    "target_2": {
+      "text": "Search",
+      "kind": "text",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [
+        "below"
+      ],
+      "anchor_text": "Member ID",
+      "geometry_hint": [
+        0.2171875,
+        0.395,
+        0.04375,
+        0.01625
+      ],
+      "min_confidence": 0.55,
+      "winner_margin": 0.12
+    },
+    "target_3": {
+      "text": "Open savings",
+      "kind": "text",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [
+        "below"
+      ],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.2171875,
+        0.41875,
+        0.08515625,
+        0.02125
+      ],
+      "min_confidence": 0.55,
+      "winner_margin": 0.12
+    },
+    "target_4": {
+      "text": "Prepare statement",
+      "kind": "text",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.21796875,
+        0.41875,
+        0.1140625,
+        0.02125
+      ],
+      "min_confidence": 0.55,
+      "winner_margin": 0.12
+    },
+    "target_5": {
+      "text": "Statement month",
+      "kind": "field",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [
+        "right_of"
+      ],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.3859375,
+        0.28875,
+        0.2390625,
+        0.0475
+      ],
+      "min_confidence": 0.5,
+      "winner_margin": 0.1
+    },
+    "target_6": {
+      "text": "Delivery method",
+      "kind": "field",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [
+        "right_of"
+      ],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.3859375,
+        0.36375,
+        0.2390625,
+        0.0475
+      ],
+      "min_confidence": 0.5,
+      "winner_margin": 0.1
+    },
+    "target_7": {
+      "text": "Review request",
+      "kind": "text",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "relationships": [],
+      "anchor_text": null,
+      "geometry_hint": [
+        0.21796875,
+        0.47,
+        0.0953125,
+        0.02125
+      ],
+      "min_confidence": 0.55,
+      "winner_margin": 0.12
+    }
+  },
+  "steps": [
+    {
+      "id": "step_1",
+      "action": "type_text",
+      "target": "target_1",
+      "input": "member_id",
+      "pre": "Member Search",
+      "post": {
+        "kind": "field_input",
+        "text": "Member Search",
+        "target": "target_1",
+        "input": "member_id"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_2",
+      "action": "click",
+      "target": "target_2",
+      "input": null,
+      "pre": "Member Search",
+      "post": {
+        "kind": "text",
+        "text": "Member Details",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_3",
+      "action": "click",
+      "target": "target_3",
+      "input": null,
+      "pre": "Member Details",
+      "post": {
+        "kind": "text",
+        "text": "Savings Account",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_4",
+      "action": "click",
+      "target": "target_4",
+      "input": null,
+      "pre": "Savings Account",
+      "post": {
+        "kind": "text",
+        "text": "Statement Request",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_5",
+      "action": "type_text",
+      "target": "target_5",
+      "input": "statement_month",
+      "pre": "Statement Request",
+      "post": {
+        "kind": "field_input",
+        "text": "Statement Request",
+        "target": "target_5",
+        "input": "statement_month"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_6",
+      "action": "type_text",
+      "target": "target_6",
+      "input": "delivery_method",
+      "pre": "Statement Request",
+      "post": {
+        "kind": "field_input",
+        "text": "Statement Request",
+        "target": "target_6",
+        "input": "delivery_method"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_7",
+      "action": "click",
+      "target": "target_7",
+      "input": null,
+      "pre": "Statement Request",
+      "post": {
+        "kind": "text",
+        "text": "Statement Review",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    }
+  ],
+  "handlers": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "text": "Member not found",
+      "response": "business_outcome",
+      "target": null,
+      "locator": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "VALIDATION_REJECTED",
+      "text": "Validation rejected",
+      "response": "business_outcome",
+      "target": null,
+      "locator": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "ACCESS_DENIED",
+      "text": "Permission denied",
+      "response": "business_outcome",
+      "target": null,
+      "locator": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "APP_UNAVAILABLE",
+      "text": "Application unavailable",
+      "response": "failure",
+      "target": null,
+      "locator": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "KNOWN_NOTICE",
+      "text": "Service notice",
+      "response": "recover",
+      "target": null,
+      "locator": {
+        "text": "Dismiss notice",
+        "kind": "text",
+        "region": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "relationships": [],
+        "anchor_text": null,
+        "geometry_hint": null,
+        "min_confidence": 0.55,
+        "winner_margin": 0.12
+      },
+      "max_attempts": 1
+    },
+    {
+      "code": "SESSION_EXPIRED",
+      "text": "Session expired",
+      "response": "intervention",
+      "target": null,
+      "locator": null,
+      "max_attempts": 1
+    }
+  ],
+  "success_condition": "Statement Review",
+  "provenance": {
+    "source": "live_llm_discovery",
+    "genuine_discovery": true,
+    "model": "gemini-3.5-flash-lite",
+    "run_id": "3e665ab24a8b4d2f86675b5dc09cf498",
+    "target_source": "model_proposed_pixel_verified",
+    "checkpoint_source": "observed_after_action",
+    "handler_source": "human_authored_and_tested",
+    "llm_calls": 10,
+    "human_assisted": false
+  }
+}

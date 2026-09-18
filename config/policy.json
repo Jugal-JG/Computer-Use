@@ -1,0 +1,8 @@
+{
+  "origin": "http://127.0.0.1:8765",
+  "routes": ["/", "/screen", "/search", "/account", "/request", "/review", "/resolve"],
+  "actions": ["click", "type_text", "key", "scroll"],
+  "allowed_targets": null,
+  "blocked_target_pattern": "\\b(submit|delete|transfer|pay|purchase|send|approve|confirm)\\b",
+  "human_targets": ["Restore training session", "Acknowledge and continue"]
+}

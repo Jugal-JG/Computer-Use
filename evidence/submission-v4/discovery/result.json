@@ -1,0 +1,18 @@
+{
+  "run_id": "181ae78ad9d5473580c23f50eb6d3d72",
+  "session_id": "fb0ecfc22a6442fea2a5f059aa33e249",
+  "artifact_hash": "594976ce1be88fbd9685de2796954dc0aefb87dfe5071fc498f3663b472c148d",
+  "status": "success",
+  "code": "DISCOVERY_COMPLETE",
+  "step": "step_7",
+  "expected": "Statement Request",
+  "observed": "{\"screens\": [\"Statement Review\"], \"modal\": false, \"condition\": \"DISCOVERY_COMPLETE\"}",
+  "outputs": {
+    "masked_account": "****0001",
+    "statement_month": "2026-08",
+    "delivery_method": "postal",
+    "review_ready": true
+  },
+  "llm_calls": 13,
+  "evidence_dir": "C:\\Users\\jugal\\Desktop\\Projects\\Computer Use\\.runs\\discovery\\181ae78ad9d5473580c23f50eb6d3d72"
+}

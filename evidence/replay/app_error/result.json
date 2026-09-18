@@ -1,0 +1,13 @@
+{
+  "run_id": "ed5ddbf3833743a4afbb88924ed5c48a",
+  "session_id": "7b7a3900b8f442399e8ade468acb5fd3",
+  "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3",
+  "status": "failure",
+  "code": "APP_UNAVAILABLE",
+  "step": "step_2",
+  "expected": "Member Details",
+  "observed": "{\"screens\": [], \"modal\": false, \"condition\": \"APP_UNAVAILABLE\"}",
+  "outputs": null,
+  "llm_calls": 0,
+  "evidence_dir": "evidence/replay/app_error"
+}

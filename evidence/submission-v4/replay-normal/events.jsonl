@@ -1,0 +1,46 @@
+{"time": 1789696891.4703794, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "run_started", "session_id": "68b4515723b94dcea60fee42a4ad10f7", "artifact_hash": "594976ce1be88fbd9685de2796954dc0aefb87dfe5071fc498f3663b472c148d"}
+{"time": 1789696891.8277957, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 63.0, "perception_ms": 281.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696891.85649, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 15.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696892.121395, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 15.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696892.3929312, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696892.3939307, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_1", "kind": "type_text", "target": "target_1", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "viewport": [1280, 800], "input_ref": "member_id"}
+{"time": 1789696892.418457, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696892.5403664, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_1", "condition": "Member Search"}
+{"time": 1789696892.567737, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696893.007826, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_2", "kind": "click", "target": "target_2", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "viewport": [1280, 800], "input_ref": null}
+{"time": 1789696893.2573812, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696893.2677515, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "target_search_scroll", "target": "Member Details", "delta": 320, "attempt": 1}
+{"time": 1789696893.7299979, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 234.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696894.1577764, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_2", "condition": "Member Details"}
+{"time": 1789696894.1865299, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696894.1890595, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_3", "kind": "click", "target": "target_3", "actor": "automation", "policy": "allowed", "x": 332.5, "y": 343.5, "viewport": [1280, 800], "input_ref": null}
+{"time": 1789696894.218505, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696894.25103, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "target_search_scroll", "target": "Savings Account", "delta": 320, "attempt": 1}
+{"time": 1789696894.6866415, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696895.0993786, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_3", "condition": "Savings Account"}
+{"time": 1789696895.1275063, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696895.1305113, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_4", "kind": "click", "target": "target_4", "actor": "automation", "policy": "allowed", "x": 352.0, "y": 343.5, "viewport": [1280, 800], "input_ref": null}
+{"time": 1789696895.1510386, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696895.1840608, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "target_search_scroll", "target": "Statement Request", "delta": 320, "attempt": 1}
+{"time": 1789696895.632424, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 15.0, "perception_ms": 235.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696896.0907316, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_4", "condition": "Statement Request"}
+{"time": 1789696896.1205606, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696896.3876395, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696896.6602237, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 32.0, "perception_ms": 218.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696896.6612227, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_5", "kind": "type_text", "target": "target_5", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "viewport": [1280, 800], "input_ref": "statement_month"}
+{"time": 1789696896.6842499, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 32.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696896.8112948, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_5", "condition": "Statement Request"}
+{"time": 1789696896.8398356, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696897.0899394, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 31.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696897.3709579, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 32.0, "perception_ms": 234.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696897.3719585, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_6", "kind": "type_text", "target": "target_6", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 310.0, "viewport": [1280, 800], "input_ref": "delivery_method"}
+{"time": 1789696897.3901315, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696897.5350015, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "target_search_scroll", "target": "Delivery method", "delta": 320, "attempt": 1}
+{"time": 1789696897.9716222, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 219.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696898.0956311, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_6", "condition": "Statement Request"}
+{"time": 1789696898.126497, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696898.5842, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "action", "step": "step_7", "kind": "click", "target": "target_7", "actor": "automation", "policy": "allowed", "x": 340.0, "y": 384.5, "viewport": [1280, 800], "input_ref": null}
+{"time": 1789696898.8551173, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 47.0, "perception_ms": 234.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696898.8551173, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "checkpoint_passed", "step": "step_7", "condition": "Statement Review"}
+{"time": 1789696898.8746417, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696899.3595636, "run_id": "c5fd2378f56f42fa96b92c33de78243a", "event": "run_finished", "status": "success", "code": "REVIEW_READY", "llm_calls": 0}

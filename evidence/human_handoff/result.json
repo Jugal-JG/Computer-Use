@@ -1,0 +1,18 @@
+{
+  "run_id": "e54fe84efbfc4e2590036996ef49598d",
+  "session_id": "dc1138db9ee847149319324a463e829c",
+  "artifact_hash": "bc6af27325775b6bd5b1b0aef3a97901c8df6391811ff4b964f5fc402ee0016c",
+  "status": "success",
+  "code": "REVIEW_READY",
+  "step": "review",
+  "expected": "Statement Review",
+  "observed": "Verified review screen",
+  "outputs": {
+    "masked_account": "****0001",
+    "statement_month": "2026-08",
+    "delivery_method": "postal",
+    "review_ready": true
+  },
+  "llm_calls": 0,
+  "evidence_dir": "evidence/human_handoff"
+}

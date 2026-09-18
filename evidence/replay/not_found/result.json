@@ -1,0 +1,13 @@
+{
+  "run_id": "4700d6dcddce4516a55ed2ca75505b10",
+  "session_id": "be04efa1cdaa4befa2ff7a4d8174edf7",
+  "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3",
+  "status": "business_outcome",
+  "code": "MEMBER_NOT_FOUND",
+  "step": "step_2",
+  "expected": "Member Details",
+  "observed": "{\"screens\": [], \"modal\": false, \"condition\": \"MEMBER_NOT_FOUND\"}",
+  "outputs": null,
+  "llm_calls": 0,
+  "evidence_dir": "evidence/replay/not_found"
+}

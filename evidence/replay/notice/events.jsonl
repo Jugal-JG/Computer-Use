@@ -1,0 +1,18 @@
+{"time": 1789247777.4611268, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "run_started", "session_id": "13d881610f724aaa8c28d14498e24e9d", "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3"}
+{"time": 1789247778.140075, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_1", "kind": "type_text", "target": "member_id", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "member_id"}
+{"time": 1789247778.5432606, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_1", "condition": "Member Search"}
+{"time": 1789247778.9179761, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_2", "kind": "click", "target": "search", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "input_ref": null}
+{"time": 1789247779.2377768, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "condition_detected", "code": "KNOWN_NOTICE"}
+{"time": 1789247779.2407773, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "recovery_action", "target": "notice", "attempt": 1}
+{"time": 1789247780.0032551, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_2", "condition": "Member Details"}
+{"time": 1789247780.36346, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_3", "kind": "click", "target": "savings", "actor": "automation", "policy": "allowed", "x": 332.5, "y": 343.5, "input_ref": null}
+{"time": 1789247780.6846666, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_3", "condition": "Savings Account"}
+{"time": 1789247781.042651, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_4", "kind": "click", "target": "prepare", "actor": "automation", "policy": "allowed", "x": 352.0, "y": 343.5, "input_ref": null}
+{"time": 1789247781.8261116, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_4", "condition": "Statement Request"}
+{"time": 1789247782.163882, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_5", "kind": "type_text", "target": "month", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "statement_month"}
+{"time": 1789247782.578209, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_5", "condition": "Statement Request"}
+{"time": 1789247782.9257717, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_6", "kind": "type_text", "target": "delivery", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 310.0, "input_ref": "delivery_method"}
+{"time": 1789247783.3411334, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_6", "condition": "Statement Request"}
+{"time": 1789247783.6772218, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "action", "step": "step_7", "kind": "click", "target": "review", "actor": "automation", "policy": "allowed", "x": 340.0, "y": 384.5, "input_ref": null}
+{"time": 1789247784.5841079, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "checkpoint_passed", "step": "step_7", "condition": "Statement Review"}
+{"time": 1789247785.1860979, "run_id": "ff2b1bb3a85a474e94cca8944d42a085", "event": "run_finished", "status": "success", "code": "REVIEW_READY", "llm_calls": 0}

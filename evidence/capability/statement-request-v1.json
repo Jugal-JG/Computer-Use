@@ -1,0 +1,328 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "prepare_statement_request",
+  "capability_version": "1.0.0",
+  "description": "Prepare a statement request and verify its review screen without submitting.",
+  "input_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "member_id": {
+        "pattern": "^\\d{5}$",
+        "title": "Member Id",
+        "type": "string"
+      },
+      "statement_month": {
+        "pattern": "^2026-(0[1-9]|1[0-2])$",
+        "title": "Statement Month",
+        "type": "string"
+      },
+      "delivery_method": {
+        "enum": [
+          "postal",
+          "electronic"
+        ],
+        "title": "Delivery Method",
+        "type": "string"
+      }
+    },
+    "required": [
+      "member_id",
+      "statement_month",
+      "delivery_method"
+    ],
+    "title": "Inputs",
+    "type": "object"
+  },
+  "output_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "masked_account": {
+        "pattern": "^\\*{4}\\d{4}$",
+        "title": "Masked Account",
+        "type": "string"
+      },
+      "statement_month": {
+        "title": "Statement Month",
+        "type": "string"
+      },
+      "delivery_method": {
+        "enum": [
+          "postal",
+          "electronic"
+        ],
+        "title": "Delivery Method",
+        "type": "string"
+      },
+      "review_ready": {
+        "const": true,
+        "default": true,
+        "title": "Review Ready",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "masked_account",
+      "statement_month",
+      "delivery_method"
+    ],
+    "title": "Outputs",
+    "type": "object"
+  },
+  "extractions": {
+    "masked_account": {
+      "label": "Masked account",
+      "parser": "masked_account"
+    },
+    "statement_month": {
+      "label": "Statement month",
+      "parser": "month"
+    },
+    "delivery_method": {
+      "label": "Delivery method",
+      "parser": "delivery"
+    }
+  },
+  "profile": "member-services-v1",
+  "viewport": [
+    1280,
+    800
+  ],
+  "entry_condition": "Member Search",
+  "targets": {
+    "member_id": {
+      "text": "Member ID",
+      "kind": "field",
+      "region": [
+        200,
+        100,
+        1250,
+        700
+      ]
+    },
+    "search": {
+      "text": "Search",
+      "kind": "text",
+      "region": [
+        210,
+        180,
+        1250,
+        700
+      ]
+    },
+    "savings": {
+      "text": "Open savings",
+      "kind": "text",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    },
+    "prepare": {
+      "text": "Prepare statement",
+      "kind": "text",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    },
+    "month": {
+      "text": "Statement month",
+      "kind": "field",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    },
+    "delivery": {
+      "text": "Delivery method",
+      "kind": "field",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    },
+    "review": {
+      "text": "Review request",
+      "kind": "text",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    },
+    "notice": {
+      "text": "Dismiss notice",
+      "kind": "text",
+      "region": [
+        0,
+        0,
+        1280,
+        800
+      ]
+    }
+  },
+  "steps": [
+    {
+      "id": "step_1",
+      "action": "type_text",
+      "target": "member_id",
+      "input": "member_id",
+      "pre": "Member Search",
+      "post": {
+        "kind": "field_input",
+        "text": "Member Search",
+        "target": "member_id",
+        "input": "member_id"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_2",
+      "action": "click",
+      "target": "search",
+      "input": null,
+      "pre": "Member Search",
+      "post": {
+        "kind": "text",
+        "text": "Member Details",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_3",
+      "action": "click",
+      "target": "savings",
+      "input": null,
+      "pre": "Member Details",
+      "post": {
+        "kind": "text",
+        "text": "Savings Account",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_4",
+      "action": "click",
+      "target": "prepare",
+      "input": null,
+      "pre": "Savings Account",
+      "post": {
+        "kind": "text",
+        "text": "Statement Request",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_5",
+      "action": "type_text",
+      "target": "month",
+      "input": "statement_month",
+      "pre": "Statement Request",
+      "post": {
+        "kind": "field_input",
+        "text": "Statement Request",
+        "target": "month",
+        "input": "statement_month"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_6",
+      "action": "type_text",
+      "target": "delivery",
+      "input": "delivery_method",
+      "pre": "Statement Request",
+      "post": {
+        "kind": "field_input",
+        "text": "Statement Request",
+        "target": "delivery",
+        "input": "delivery_method"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "id": "step_7",
+      "action": "click",
+      "target": "review",
+      "input": null,
+      "pre": "Statement Request",
+      "post": {
+        "kind": "text",
+        "text": "Statement Review",
+        "target": null,
+        "input": null
+      },
+      "timeout_ms": 10000
+    }
+  ],
+  "handlers": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "text": "Member not found",
+      "response": "business_outcome",
+      "target": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "VALIDATION_REJECTED",
+      "text": "Validation rejected",
+      "response": "business_outcome",
+      "target": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "ACCESS_DENIED",
+      "text": "Permission denied",
+      "response": "business_outcome",
+      "target": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "APP_UNAVAILABLE",
+      "text": "Application unavailable",
+      "response": "failure",
+      "target": null,
+      "max_attempts": 1
+    },
+    {
+      "code": "KNOWN_NOTICE",
+      "text": "Service notice",
+      "response": "recover",
+      "target": "notice",
+      "max_attempts": 1
+    },
+    {
+      "code": "SESSION_EXPIRED",
+      "text": "Session expired",
+      "response": "intervention",
+      "target": null,
+      "max_attempts": 1
+    }
+  ],
+  "success_condition": "Statement Review",
+  "provenance": {
+    "source": "live_llm_discovery",
+    "genuine_discovery": true,
+    "model": "gemini-3.5-flash-lite",
+    "run_id": "b71f8199da7c40258e033735cb21eaab",
+    "handler_source": "human_authored_and_tested",
+    "target_source": "reviewed_visual_profile",
+    "llm_calls": 8,
+    "human_assisted": false
+  }
+}

@@ -1,0 +1,461 @@
+{
+  "$defs": {
+    "Condition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "default": "text",
+          "enum": [
+            "text",
+            "field_input"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "input": {
+          "anyOf": [
+            {
+              "enum": [
+                "member_id",
+                "statement_month",
+                "delivery_method"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Condition",
+      "type": "object"
+    },
+    "Extraction": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "parser": {
+          "enum": [
+            "masked_account",
+            "month",
+            "delivery"
+          ],
+          "title": "Parser",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "label",
+        "parser"
+      ],
+      "title": "Extraction",
+      "type": "object"
+    },
+    "Handler": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "response": {
+          "enum": [
+            "business_outcome",
+            "recover",
+            "intervention",
+            "failure"
+          ],
+          "title": "Response",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "max_attempts": {
+          "default": 1,
+          "maximum": 2,
+          "minimum": 1,
+          "title": "Max Attempts",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "code",
+        "text",
+        "response"
+      ],
+      "title": "Handler",
+      "type": "object"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "click",
+            "type_text"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "input": {
+          "anyOf": [
+            {
+              "enum": [
+                "member_id",
+                "statement_month",
+                "delivery_method"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input"
+        },
+        "pre": {
+          "title": "Pre",
+          "type": "string"
+        },
+        "post": {
+          "$ref": "#/$defs/Condition"
+        },
+        "timeout_ms": {
+          "default": 5000,
+          "maximum": 15000,
+          "minimum": 500,
+          "title": "Timeout Ms",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "action",
+        "target",
+        "pre",
+        "post"
+      ],
+      "title": "Step",
+      "type": "object"
+    },
+    "Target": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "default": "text",
+          "enum": [
+            "text",
+            "field",
+            "value"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "region": {
+          "default": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Region",
+          "type": "array"
+        },
+        "relationships": {
+          "default": [],
+          "items": {
+            "enum": [
+              "right_of",
+              "left_of",
+              "above",
+              "below",
+              "same_row",
+              "same_column",
+              "inside_container"
+            ],
+            "type": "string"
+          },
+          "title": "Relationships",
+          "type": "array"
+        },
+        "anchor_text": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anchor Text"
+        },
+        "geometry_hint": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Geometry Hint"
+        },
+        "min_confidence": {
+          "default": 0.55,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Min Confidence",
+          "type": "number"
+        },
+        "winner_margin": {
+          "default": 0.12,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Winner Margin",
+          "type": "number"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Target",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "default": "2.0",
+      "enum": [
+        "2.0",
+        "3.0"
+      ],
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "capability_id": {
+      "const": "prepare_statement_request",
+      "default": "prepare_statement_request",
+      "title": "Capability Id",
+      "type": "string"
+    },
+    "capability_version": {
+      "default": "1.0.0",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "title": "Capability Version",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "input_schema": {
+      "additionalProperties": true,
+      "title": "Input Schema",
+      "type": "object"
+    },
+    "output_schema": {
+      "additionalProperties": true,
+      "title": "Output Schema",
+      "type": "object"
+    },
+    "extractions": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Extraction"
+      },
+      "title": "Extractions",
+      "type": "object"
+    },
+    "profile": {
+      "const": "member-services-v1",
+      "default": "member-services-v1",
+      "title": "Profile",
+      "type": "string"
+    },
+    "discovery_viewport": {
+      "anyOf": [
+        {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Discovery Viewport"
+    },
+    "entry_condition": {
+      "default": "Member Search",
+      "title": "Entry Condition",
+      "type": "string"
+    },
+    "targets": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Target"
+      },
+      "title": "Targets",
+      "type": "object"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/Step"
+      },
+      "maxItems": 30,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "handlers": {
+      "items": {
+        "$ref": "#/$defs/Handler"
+      },
+      "title": "Handlers",
+      "type": "array"
+    },
+    "success_condition": {
+      "default": "Statement Review",
+      "title": "Success Condition",
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": true,
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "required": [
+    "description",
+    "input_schema",
+    "output_schema",
+    "extractions",
+    "targets",
+    "steps",
+    "handlers",
+    "provenance"
+  ],
+  "title": "Artifact",
+  "type": "object"
+}

@@ -1,0 +1,6 @@
+{"time": 1789247754.3705764, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "run_started", "session_id": "be04efa1cdaa4befa2ff7a4d8174edf7", "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3"}
+{"time": 1789247755.0151467, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "action", "step": "step_1", "kind": "type_text", "target": "member_id", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "member_id"}
+{"time": 1789247755.4173884, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "checkpoint_passed", "step": "step_1", "condition": "Member Search"}
+{"time": 1789247755.7278047, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "action", "step": "step_2", "kind": "click", "target": "search", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "input_ref": null}
+{"time": 1789247756.542995, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "condition_detected", "code": "MEMBER_NOT_FOUND"}
+{"time": 1789247756.5560005, "run_id": "4700d6dcddce4516a55ed2ca75505b10", "event": "run_finished", "status": "business_outcome", "code": "MEMBER_NOT_FOUND", "llm_calls": 0}

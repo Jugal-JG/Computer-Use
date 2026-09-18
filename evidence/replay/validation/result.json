@@ -1,0 +1,13 @@
+{
+  "run_id": "b42a346f265f483ebcb2d7d9f890be98",
+  "session_id": "18497d55a070408fb046f5e04c0334d3",
+  "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3",
+  "status": "business_outcome",
+  "code": "VALIDATION_REJECTED",
+  "step": "step_7",
+  "expected": "Statement Review",
+  "observed": "{\"screens\": [\"Statement Request\"], \"modal\": false, \"condition\": \"VALIDATION_REJECTED\"}",
+  "outputs": null,
+  "llm_calls": 0,
+  "evidence_dir": "evidence/replay/validation"
+}

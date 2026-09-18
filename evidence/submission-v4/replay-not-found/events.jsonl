@@ -1,0 +1,13 @@
+{"time": 1789696938.10416, "run_id": "d726ac94557948d2a858abef6690989d", "event": "run_started", "session_id": "56a54cabb13c459dbf688e3ca7c3a08d", "artifact_hash": "594976ce1be88fbd9685de2796954dc0aefb87dfe5071fc498f3663b472c148d"}
+{"time": 1789696938.4707417, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 78.0, "perception_ms": 266.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696938.4990065, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696938.7737772, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 31.0, "perception_ms": 234.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696939.0636637, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 16.0, "perception_ms": 250.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696939.0646653, "run_id": "d726ac94557948d2a858abef6690989d", "event": "action", "step": "step_1", "kind": "type_text", "target": "target_1", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "viewport": [1280, 800], "input_ref": "member_id"}
+{"time": 1789696939.0842445, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 15.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696939.2200387, "run_id": "d726ac94557948d2a858abef6690989d", "event": "checkpoint_passed", "step": "step_1", "condition": "Member Search"}
+{"time": 1789696939.2683275, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 16.0, "perception_ms": 0.0, "ocr_reused": true, "viewport": [1280, 800]}
+{"time": 1789696939.719193, "run_id": "d726ac94557948d2a858abef6690989d", "event": "action", "step": "step_2", "kind": "click", "target": "target_2", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "viewport": [1280, 800], "input_ref": null}
+{"time": 1789696939.979974, "run_id": "d726ac94557948d2a858abef6690989d", "event": "observation", "capture_ms": 31.0, "perception_ms": 234.0, "ocr_reused": false, "viewport": [1280, 800]}
+{"time": 1789696939.979974, "run_id": "d726ac94557948d2a858abef6690989d", "event": "condition_detected", "code": "MEMBER_NOT_FOUND"}
+{"time": 1789696939.999522, "run_id": "d726ac94557948d2a858abef6690989d", "event": "run_finished", "status": "business_outcome", "code": "MEMBER_NOT_FOUND", "llm_calls": 0}

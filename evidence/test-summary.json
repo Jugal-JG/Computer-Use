@@ -1,0 +1,10 @@
+{
+  "command": "python -m pytest -q -p no:cacheprovider",
+  "passed": 27,
+  "failed": 0,
+  "duration_seconds": 59.85,
+  "environment": "Windows 11, Python 3.12.14, Tesseract 5.4.0.20240606, Playwright 1.62.0",
+  "remote_ci_executed": false,
+  "subsequent_focused_guardrail_checks": {"passed": 16, "failed": 0, "duration_seconds": 0.25},
+  "setup_check": "Chromium 151.0.7922.34 launches and closes cleanly"
+}

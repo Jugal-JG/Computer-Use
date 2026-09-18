@@ -1,0 +1,20 @@
+{"time": 1789247417.1253383, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "run_started", "session_id": "dc1138db9ee847149319324a463e829c", "artifact_hash": "bc6af27325775b6bd5b1b0aef3a97901c8df6391811ff4b964f5fc402ee0016c"}
+{"time": 1789247418.1647327, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "enter_member", "kind": "type_text", "target": "member_id", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "member_id"}
+{"time": 1789247418.6620004, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "enter_member", "condition": "Member Search"}
+{"time": 1789247418.9961965, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "search", "kind": "click", "target": "search", "actor": "automation", "policy": "allowed", "x": 306.0, "y": 322.5, "input_ref": null}
+{"time": 1789247419.3753355, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "intervention_requested", "step": "search", "code": "UNKNOWN_DIALOG", "session_id": "dc1138db9ee847149319324a463e829c", "generation": 1}
+{"time": 1789247516.9086678, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "human_control_acquired", "generation": 2, "actor": "human"}
+{"time": 1789247519.2208564, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "human_action", "kind": "click", "target": "Acknowledge and continue", "x": 570.1548246030399, "y": 492.29936784439064}
+{"time": 1789247541.6829429, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "resume_verified", "session_id": "dc1138db9ee847149319324a463e829c"}
+{"time": 1789247542.06088, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "search", "condition": "Member Details"}
+{"time": 1789247542.4354227, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "open_savings", "kind": "click", "target": "savings", "actor": "automation", "policy": "allowed", "x": 332.5, "y": 343.5, "input_ref": null}
+{"time": 1789247543.378746, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "open_savings", "condition": "Savings Account"}
+{"time": 1789247543.7738316, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "prepare", "kind": "click", "target": "prepare", "actor": "automation", "policy": "allowed", "x": 352.0, "y": 343.5, "input_ref": null}
+{"time": 1789247544.111582, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "prepare", "condition": "Statement Request"}
+{"time": 1789247544.498838, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "month", "kind": "type_text", "target": "month", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 250.0, "input_ref": "statement_month"}
+{"time": 1789247544.9388456, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "month", "condition": "Statement Request"}
+{"time": 1789247545.3540452, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "delivery", "kind": "type_text", "target": "delivery", "actor": "automation", "policy": "allowed", "x": 647.0, "y": 310.0, "input_ref": "delivery_method"}
+{"time": 1789247545.7728496, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "delivery", "condition": "Statement Request"}
+{"time": 1789247546.1798213, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "action", "step": "review", "kind": "click", "target": "review", "actor": "automation", "policy": "allowed", "x": 340.0, "y": 384.5, "input_ref": null}
+{"time": 1789247547.2150493, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "checkpoint_passed", "step": "review", "condition": "Statement Review"}
+{"time": 1789247547.9216352, "run_id": "e54fe84efbfc4e2590036996ef49598d", "event": "run_finished", "status": "success", "code": "REVIEW_READY", "llm_calls": 0}

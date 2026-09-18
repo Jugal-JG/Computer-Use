@@ -1,0 +1,13 @@
+{
+  "run_id": "d726ac94557948d2a858abef6690989d",
+  "session_id": "56a54cabb13c459dbf688e3ca7c3a08d",
+  "artifact_hash": "594976ce1be88fbd9685de2796954dc0aefb87dfe5071fc498f3663b472c148d",
+  "status": "business_outcome",
+  "code": "MEMBER_NOT_FOUND",
+  "step": "step_2",
+  "expected": "Member Details",
+  "observed": "{\"screens\": [], \"modal\": false, \"condition\": \"MEMBER_NOT_FOUND\"}",
+  "outputs": null,
+  "llm_calls": 0,
+  "evidence_dir": "C:\\Users\\jugal\\Desktop\\Projects\\Computer Use\\.runs\\submission-refresh\\replay-not-found-10001"
+}

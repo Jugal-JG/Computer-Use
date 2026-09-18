@@ -1,0 +1,13 @@
+{
+  "run_id": "d1b6df38a54d40de81117184abcba243",
+  "session_id": "13d1c6b340a2494ead156108d51bcbe3",
+  "artifact_hash": "503b6aeed02ad342eaf480d9caaf360515e859a679735a257a5433423669fac3",
+  "status": "business_outcome",
+  "code": "ACCESS_DENIED",
+  "step": "step_2",
+  "expected": "Member Details",
+  "observed": "{\"screens\": [], \"modal\": false, \"condition\": \"ACCESS_DENIED\"}",
+  "outputs": null,
+  "llm_calls": 0,
+  "evidence_dir": "evidence/replay/permission"
+}

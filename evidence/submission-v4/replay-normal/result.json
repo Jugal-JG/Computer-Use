@@ -1,0 +1,18 @@
+{
+  "run_id": "c5fd2378f56f42fa96b92c33de78243a",
+  "session_id": "68b4515723b94dcea60fee42a4ad10f7",
+  "artifact_hash": "594976ce1be88fbd9685de2796954dc0aefb87dfe5071fc498f3663b472c148d",
+  "status": "success",
+  "code": "REVIEW_READY",
+  "step": "step_7",
+  "expected": "Statement Review",
+  "observed": "{\"screens\": [\"Statement Review\"], \"modal\": false, \"condition\": \"REVIEW_READY\"}",
+  "outputs": {
+    "masked_account": "****0001",
+    "statement_month": "2026-08",
+    "delivery_method": "postal",
+    "review_ready": true
+  },
+  "llm_calls": 0,
+  "evidence_dir": "C:\\Users\\jugal\\Desktop\\Projects\\Computer Use\\.runs\\submission-refresh\\replay-normal-10001"
+}

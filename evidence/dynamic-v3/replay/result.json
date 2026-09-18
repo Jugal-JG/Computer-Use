@@ -1,0 +1,18 @@
+{
+  "run_id": "9811d1e09d534f7c9222d6f190314e7c",
+  "session_id": "9ad41184fb1642c789ff53c0eed33e43",
+  "artifact_hash": "c7fa2484ae86a3ae71323bfa3b318c1291e5f500d589e7ca1e9fc1d3c0037e66",
+  "status": "success",
+  "code": "REVIEW_READY",
+  "step": "step_7",
+  "expected": "Statement Review",
+  "observed": "{\"screens\": [\"Statement Review\"], \"modal\": false, \"condition\": \"REVIEW_READY\"}",
+  "outputs": {
+    "masked_account": "****0002",
+    "statement_month": "2026-07",
+    "delivery_method": "electronic",
+    "review_ready": true
+  },
+  "llm_calls": 0,
+  "evidence_dir": "C:\\Users\\jugal\\Desktop\\Projects\\Computer Use\\.runs\\dynamic-validation-3\\replay"
+}
